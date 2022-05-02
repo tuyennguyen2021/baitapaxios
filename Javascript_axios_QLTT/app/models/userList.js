@@ -1,0 +1,3 @@
+function UserList() {
+  this.arr = [];
+}

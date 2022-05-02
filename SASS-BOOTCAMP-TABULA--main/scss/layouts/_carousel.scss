@@ -1,0 +1,17 @@
+#carousel {
+  background-image: url(../../img/yellow_top_wave_01.png),
+    url("../../img/Violet_top_left_wave.png");
+  background-position: left top, bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 200px;
+
+  .car__content {
+    h6 {
+      @include styleText($color-purple, $fs-2, 0);
+    }
+    h1 {
+      @include styleText($color-dark-1, $fs-8, $fw-3);
+    }
+  }
+}

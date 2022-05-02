@@ -1,0 +1,79 @@
+header {
+  .navbar-nav {
+    .nav-item {
+      padding: 0 20px;
+    }
+
+    .nav-link {
+      @include styleText($color-dark-1, $fs-1, $fw-2);
+
+      &:hover {
+        color: $color-purple !important;
+      }
+    }
+  }
+
+  .topbarmenu {
+    .bar__icon a {
+      @include styleIcon($color-purple, $color-dark-1);
+    }
+
+    .button {
+      @include styleButton(
+        176px,
+        36px,
+        $color-white-1,
+        $color-purple,
+        $color-purple,
+        $color-white-1
+      );
+    }
+  }
+  .navbar-collapse.collapse {
+    @include mediaQuery($sm) {
+      background-color: $color-white-1;
+      z-index: 99;
+      width: 100%;
+    }
+  }
+}
+
+.header-default {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  @include mediaQuery($md) {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+}
+
+.header-onscroll {
+  background-color: white;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s;
+  padding-top: 1rem;
+  z-index: 99;
+
+  img {
+    display: none;
+  }
+}
+
+.header-default .nav-item {
+  transition: all 0.5s;
+}
+.header-onscroll .nav-item {
+  transition: all 0.5s;
+}

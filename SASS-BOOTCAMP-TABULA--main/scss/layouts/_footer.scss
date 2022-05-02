@@ -1,0 +1,67 @@
+#footer {
+  background-image: url("../../img/footer_background.jpg");
+  background-size: cover;
+  padding: 120px 0;
+  color: $color-white-1 !important;
+  @include mediaQuery($lg) {
+    background-image: url("../../img/footer_background.jpg");
+    background-position: top right;
+    background-size: cover;
+    padding: 120px 0;
+  }
+  @include mediaQuery($sm) {
+    background-image: url("../../img/footer_background.jpg");
+    background-position: bottom right;
+    background-size: cover;
+    padding: 120px 0;
+  }
+  .bar__icon a {
+    @include styleIcon($color-dark-1, $color-white-1);
+  }
+
+  .widget-services h5 {
+    @include styleText($color-white-1, 24px, $fw-3);
+    padding-bottom: 20px;
+  }
+  .widget-content li {
+    color: #fff !important;
+    font-size: $fs-1;
+    padding-bottom: 12px;
+    padding-top: 8px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    & a {
+      color: #fff !important;
+      font-size: $fs-1;
+    }
+  }
+  .widget-add li {
+    color: #fff !important;
+    font-size: $fs-1;
+    padding-bottom: 12px;
+  }
+  .widget-content-btn {
+    .button {
+      @include styleButton(
+        240px,
+        48px,
+        $color-dark-1,
+        $color-white-1,
+        $color-white-1,
+        $color-purple
+      );
+    }
+    .email input {
+      color: #fff;
+      width: 240px;
+      height: 48px;
+      border: 1px solid rgba(255, 255, 255, 1);
+      background: $color-purple;
+      border-radius: 50px;
+      &::placeholder {
+        color: #fff;
+        text-align: center;
+        font-size: $fs-1;
+      }
+    }
+  }
+}

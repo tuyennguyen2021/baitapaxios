@@ -1,0 +1,605 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  border-style: none;
+  height: auto;
+  width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.white {
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 15px gray;
+          box-shadow: 0px 8px 15px gray;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  height: auto;
+}
+
+.removeHead {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+
+header .navbar-nav .nav-item {
+  padding: 0 20px;
+}
+
+header .navbar-nav .nav-link {
+  color: #181818 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+header .navbar-nav .nav-link:hover {
+  color: #b61984 !important;
+}
+
+header .topbarmenu .bar__icon a {
+  margin: 0 4px;
+  color: #181818 !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+header .topbarmenu .bar__icon a:hover {
+  color: #b61984 !important;
+}
+
+header .topbarmenu .button {
+  position: relative;
+  width: 176px;
+  height: 36px;
+  color: #fff;
+  border-radius: 50px;
+  background-color: #b61984;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
+}
+
+header .topbarmenu .button:hover .btn__hover {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1.5px solid #b61984;
+}
+
+header .topbarmenu .button:hover span {
+  color: #b61984;
+}
+
+header .topbarmenu .button .btn__hover {
+  width: 88px;
+  height: 0px;
+  position: absolute;
+  border-radius: 50px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 66;
+}
+
+header .topbarmenu .button span {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  z-index: 99;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  header .navbar-collapse.collapse {
+    background-color: #fff;
+    z-index: 99;
+    width: 100%;
+  }
+}
+
+.header-default {
+  background-color: transparent !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+@media screen and (max-width: 992px) {
+  .header-default {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+}
+
+.header-onscroll {
+  background-color: white;
+  -webkit-box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  padding-top: 1rem;
+  z-index: 99;
+}
+
+.header-onscroll img {
+  display: none;
+}
+
+.header-default .nav-item {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.header-onscroll .nav-item {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#carousel {
+  background-image: url(../../img/yellow_top_wave_01.png), url("../../img/Violet_top_left_wave.png");
+  background-position: left top, bottom left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 200px;
+}
+
+#carousel .car__content h6 {
+  color: #b61984 !important;
+  font-size: 1.1rem;
+  font-weight: 0;
+}
+
+#carousel .car__content h1 {
+  color: #181818 !important;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+#content {
+  background-image: url("../../img/Wave_White_bottom_right_shape_01.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #dcd0f0;
+}
+
+#content .card {
+  margin-top: 40px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: none;
+}
+
+#content .card .card-img {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#content .card .card-img-top {
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+#content .card .card-img-top:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+#content .card .card-body {
+  text-align: center;
+}
+
+#content .card .card-body h6 {
+  color: #b61984 !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+#content .card .card-body h4 {
+  color: #181818 !important;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#content .card .card-body p {
+  font-size: 14px;
+  padding: 15px 0;
+}
+
+#content .card:hover {
+  -webkit-box-shadow: 0px 8px 15px gray;
+          box-shadow: 0px 8px 15px gray;
+  -webkit-transition: 0.7s;
+  transition: 0.7s;
+}
+
+#course {
+  padding: 60px 0;
+  background-image: url("../../img/accent_bottom_wave_01.png");
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#course .course__inner {
+  width: 1000px;
+  max-width: calc(100% - 60px);
+}
+
+#course .course__form {
+  padding: 30px 25px;
+}
+
+#course .course__form .form-group {
+  padding: 0 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 8px 15px gray;
+          box-shadow: 0px 8px 15px gray;
+}
+
+#course .course__form .form-group .text__form {
+  color: #181818 !important;
+  font-size: 44px;
+  font-weight: 700;
+}
+
+#course .course__form .form-group .box1,
+#course .course__form .form-group .box2 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 195px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+#course .course__form .form-group .box1 > i,
+#course .course__form .form-group .box2 > i {
+  font-size: 14px;
+  color: #b61984;
+  padding-right: 10px;
+}
+
+#course .course__form .form-group .box1 > input,
+#course .course__form .form-group .box2 > input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 40px;
+  border: none;
+  outline: none;
+}
+
+#course .course__form .form-group .box1 > input::-webkit-input-placeholder,
+#course .course__form .form-group .box2 > input::-webkit-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box1 > input:-ms-input-placeholder,
+#course .course__form .form-group .box2 > input:-ms-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box1 > input::-ms-input-placeholder,
+#course .course__form .form-group .box2 > input::-ms-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box1 > input::placeholder,
+#course .course__form .form-group .box2 > input::placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box3 {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+#course .course__form .form-group .box3 > .language {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 40px;
+  border: none;
+  outline: none;
+}
+
+#course .course__form .form-group .box3 > i {
+  font-size: 14px;
+  color: #b61984;
+  padding-right: 10px;
+}
+
+#course .course__form .form-group .box4 {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid gray;
+  padding: 10px;
+}
+
+#course .course__form .form-group .box4 > i {
+  font-size: 14px;
+  color: #b61984;
+  padding-right: 10px;
+  padding-top: 10px;
+}
+
+#course .course__form .form-group .box4 > .message {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 40px;
+  border: none;
+  outline: none;
+}
+
+#course .course__form .form-group .box4 > .message::-webkit-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box4 > .message:-ms-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box4 > .message::-ms-input-placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .box4 > .message::placeholder {
+  color: gray;
+  font-size: 14px;
+}
+
+#course .course__form .form-group .button {
+  position: relative;
+  width: 150px;
+  height: 48px;
+  color: #fff;
+  border-radius: 50px;
+  background-color: #b61984;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#course .course__form .form-group .button:hover .btn__hover {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border: 1.5px solid #b61984;
+}
+
+#course .course__form .form-group .button:hover span {
+  color: #b61984;
+}
+
+#course .course__form .form-group .button .btn__hover {
+  width: 75px;
+  height: 0px;
+  position: absolute;
+  border-radius: 50px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 66;
+}
+
+#course .course__form .form-group .button span {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  z-index: 99;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  #course .course__form .form-group .button {
+    width: 100%;
+  }
+}
+
+#footer {
+  background-image: url("../../img/footer_background.jpg");
+  background-size: cover;
+  padding: 120px 0;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1200px) {
+  #footer {
+    background-image: url("../../img/footer_background.jpg");
+    background-position: top right;
+    background-size: cover;
+    padding: 120px 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #footer {
+    background-image: url("../../img/footer_background.jpg");
+    background-position: bottom right;
+    background-size: cover;
+    padding: 120px 0;
+  }
+}
+
+#footer .bar__icon a {
+  margin: 0 4px;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#footer .bar__icon a:hover {
+  color: #181818 !important;
+}
+
+#footer .widget-services h5 {
+  color: #fff !important;
+  font-size: 24px;
+  font-weight: 700;
+  padding-bottom: 20px;
+}
+
+#footer .widget-content li {
+  color: #fff !important;
+  font-size: 14px;
+  padding-bottom: 12px;
+  padding-top: 8px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+#footer .widget-content li a {
+  color: #fff !important;
+  font-size: 14px;
+}
+
+#footer .widget-add li {
+  color: #fff !important;
+  font-size: 14px;
+  padding-bottom: 12px;
+}
+
+#footer .widget-content-btn .button {
+  position: relative;
+  width: 240px;
+  height: 48px;
+  color: #181818;
+  border-radius: 50px;
+  background-color: #fff;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
+}
+
+#footer .widget-content-btn .button:hover .btn__hover {
+  width: 100%;
+  height: 100%;
+  background-color: #b61984;
+  border: 1.5px solid #fff;
+}
+
+#footer .widget-content-btn .button:hover span {
+  color: #fff;
+}
+
+#footer .widget-content-btn .button .btn__hover {
+  width: 120px;
+  height: 0px;
+  position: absolute;
+  border-radius: 50px;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  z-index: 66;
+}
+
+#footer .widget-content-btn .button span {
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  z-index: 99;
+  font-size: 14px;
+}
+
+#footer .widget-content-btn .email input {
+  color: #fff;
+  width: 240px;
+  height: 48px;
+  border: 1px solid white;
+  background: #b61984;
+  border-radius: 50px;
+}
+
+#footer .widget-content-btn .email input::-webkit-input-placeholder {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+#footer .widget-content-btn .email input:-ms-input-placeholder {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+#footer .widget-content-btn .email input::-ms-input-placeholder {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+#footer .widget-content-btn .email input::placeholder {
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+/*# sourceMappingURL=style.css.map */

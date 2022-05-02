@@ -1,0 +1,105 @@
+#course {
+  padding: 60px 0;
+  @include bgImage("../../img/accent_bottom_wave_01.png", left bottom);
+  .course__inner {
+    width: 1000px;
+    max-width: calc(100% - 60px);
+  }
+
+  .course__form {
+    padding: 30px 25px;
+
+    .form-group {
+      padding: 0 20px;
+      border-radius: 10px;
+      background-color: #fff;
+      box-shadow: 0px 8px 15px gray;
+      .text__form {
+        @include styleText($color-dark-1, $fs-8, $fw-3);
+      }
+      .box1,
+      .box2 {
+        align-items: center;
+        width: 195px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 30px;
+        border: 1px solid gray;
+        padding: 10px;
+        & > i {
+          font-size: 14px;
+          color: $color-purple;
+          padding-right: 10px;
+        }
+        & > input {
+          flex: 1;
+          width: 40px;
+          border: none;
+          outline: none;
+          &::placeholder {
+            color: gray;
+            font-size: $fs-1;
+          }
+        }
+      }
+      .box3 {
+        align-items: center;
+        width: 100%;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 30px;
+        border: 1px solid gray;
+        padding: 10px;
+        & > .language {
+          flex: 1;
+          width: 40px;
+          border: none;
+          outline: none;
+        }
+        & > i {
+          font-size: 14px;
+          color: $color-purple;
+          padding-right: 10px;
+        }
+      }
+      .box4 {
+        align-items: start;
+        width: 100%;
+        background-color: #fff;
+        border-radius: 30px;
+        border: 1px solid gray;
+        padding: 10px;
+        & > i {
+          font-size: 14px;
+          color: $color-purple;
+          padding-right: 10px;
+          padding-top: 10px;
+        }
+        & > .message {
+          flex: 1;
+          width: 40px;
+          border: none;
+          outline: none;
+          &::placeholder {
+            color: gray;
+            font-size: $fs-1;
+          }
+        }
+      }
+
+      .button {
+        @include styleButton(
+          150px,
+          48px,
+          $color-white-1,
+          $color-purple,
+          $color-purple,
+          $color-white-1
+        );
+        @include mediaQuery($sm) {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

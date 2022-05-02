@@ -1,0 +1,90 @@
+@mixin styleText($color, $fs, $fw) {
+  color: $color !important;
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+// button style
+
+@mixin styleButton($w1, $h1, $color1, $cbg1, $color2, $cbg2) {
+  position: relative;
+  // display: flex;
+  width: $w1;
+  height: $h1;
+  color: $color1;
+  border-radius: 50px;
+  background-color: $cbg1;
+  text-align: center;
+  overflow: hidden;
+  z-index: 10;
+  cursor: pointer;
+
+  &:hover .btn__hover {
+    width: 100%;
+    height: 100%;
+    background-color: $cbg2;
+    border: 1.5px solid $color2;
+  }
+  &:hover span {
+    color: $color2;
+  }
+
+  .btn__hover {
+    width: ($w1/2);
+    height: 0px;
+    position: absolute;
+    border-radius: 50px;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    transition: 0.3s;
+    z-index: 66;
+  }
+
+  span {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 99;
+    font-size: $fs-1;
+  }
+}
+
+// icon social
+
+@mixin styleIcon($hoverColor, $color) {
+  margin: 0 4px;
+  @include styleText($color, $fs-1, $fw-2);
+  &:hover {
+    color: $hoverColor !important;
+  }
+}
+
+@mixin bgImage($img, $bp) {
+  background-image: url($img);
+  background-position: $bp;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@mixin mediaQuery($type) {
+  @if $type == $xs {
+    @media screen and (max-width: $xs) {
+      @content;
+    }
+  } @else if $type == $sm {
+    @media screen and (max-width: $sm) {
+      @content;
+    }
+  } @else if $type == $md {
+    @media screen and (max-width: $md) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $lg) {
+      @content;
+    }
+  }
+}

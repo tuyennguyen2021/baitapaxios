@@ -236,6 +236,7 @@ function suaUser(id) {
     .then(function (result) {
       console.log(result.data);
       getEle("TaiKhoan").value = result.data.taiKhoan;
+      getEle("TaiKhoan").disabled = true;
       getEle("HoTen").value = result.data.hoTen;
       getEle("MatKhau").value = result.data.matKhau;
       getEle("Email").value = result.data.email;
@@ -264,29 +265,121 @@ function update(id) {
   var loaiNgonNgu = getEle("loaiNgonNgu").value;
   var moTa = getEle("MoTa").value;
   var hinhAnh = getEle("HinhAnh").value;
+  var isValid = true;
+
+  isValid &=
+    validation.kiemTraRong(
+      taiKhoan,
+      "tbtaiKhoan",
+      "(*) vui lòng nhập tài khoản"
+    ) &&
+    validation.kiemTraKhoangTrang(
+      taiKhoan,
+      "tbtaiKhoan",
+      "(*) vui lòng không để khoảng trắng"
+    );
+
+  // kiem tra hoTen
+
+  isValid &=
+    validation.kiemTraRong(hoTen, "tbHoTen", "(*) vui lòng nhập họ tên") &&
+    validation.kiemTraHoTen(
+      hoTen,
+      "tbHoTen",
+      "(*) vui lòng nhập họ tên là ký tự"
+    );
+
+  //kiem tra mat khau
+
+  isValid &=
+    validation.kiemTraRong(
+      matKhau,
+      "tbMatKhau",
+      "(*) vui lòng nhập mật khẩu"
+    ) &&
+    validation.kiemTraPass(
+      matKhau,
+      "tbMatKhau",
+      "(*) vui lòng nhập mật khẩu đúng format có ít nhất 1 ký tự hoa, 1 ký tự đặc biệt, 1 ký tự số"
+    ) &&
+    validation.kiemTraDoDai(
+      matKhau,
+      "tbMatKhau",
+      "(*) vui lòng nhập mật khẩu có độ dài từ 6 đến 8 ký tự",
+      6,
+      8
+    );
+
+  // kiem tra email
+
+  isValid &=
+    validation.kiemTraRong(email, "tbEmail", "(*) vui lòng nhập email") &&
+    validation.kiemTraEmail(
+      email,
+      "tbEmail",
+      "(*) vui lòng nhập email đúng định dạng"
+    );
+
+  // kiem tra hinh anh
+  isValid &= validation.kiemTraRong(
+    hinhAnh,
+    "tbHinhAnh",
+    "(*) vui lòng input hình ảnh"
+  );
+
+  // check nguoi dung
+
+  isValid &= validation.chonGiaTri(
+    loaiND,
+    "tbloaiNguoiDung",
+    "Chọn loại người dùng"
+  );
+
+  // check ngon ngu
+  isValid &= validation.chonGiaTri(
+    loaiNgonNgu,
+    "tbloaiNgonNgu",
+    "Chọn ngôn ngữ"
+  );
+
+  // check mo ta
+  isValid &=
+    validation.kiemTraRong(moTa, "tbMoTa", "(*) vui lòng nhập mô tả") &&
+    validation.kiemTraDoDai(
+      moTa,
+      "tbMoTa",
+      "(*) vui lòng nhập mô tả không quá 60 ký tự",
+      0,
+      60
+    );
 
   //tao doi tuong user tu lop doi tuong
 
-  var user = new User(
-    id,
-    taiKhoan,
-    hoTen,
-    matKhau,
-    email,
-    loaiND,
-    loaiNgonNgu,
-    moTa,
-    hinhAnh
-  );
+  if (isValid) {
+    var user = new User(
+      id,
+      taiKhoan,
+      hoTen,
+      matKhau,
+      email,
+      loaiND,
+      loaiNgonNgu,
+      moTa,
+      hinhAnh
+    );
+  }
+
   console.log(user);
 
-  services
-    .putUserById(user)
-    .then(function () {
-      getListTeacher();
-      document.querySelector(".close").click();
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+  if (user) {
+    services
+      .putUserById(user)
+      .then(function () {
+        getListTeacher();
+        document.querySelector(".close").click();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 }
